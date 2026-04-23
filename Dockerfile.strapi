@@ -5,7 +5,7 @@ RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev l
 ENV NODE_ENV=development
 
 WORKDIR /opt/
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json* ./
 RUN npm install && npm cache clean --force
 ENV PATH /opt/node_modules/.bin:$PATH
 
